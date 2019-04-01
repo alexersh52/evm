@@ -1,0 +1,89 @@
+\documentclass[14pt,a4paper, leqno]{scrartcl}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\begin{document}
+And $W_{\alpha}=\infty$ a.e. on $\{ \tau = \infty\}$, because $\sum V_i = \infty$ a.e. So $\text{exp}[-e(\lambda)W_a]=0$
+a.e. on $\{ \tau_a = \infty \}$, and the itegral can be extended over the whole space. $\square$
+
+This result is false if, for instance, all the $V_i$ vanish. The next main step is proving $(1.10)$, which estimates $P\{W_a < b \}$ from
+below when $a$ is the order $(b \log \log b)^{\frac{1}{2}} $. The proof is disappointingly hard. The main analytical difficulty is isolated in
+$(4.10)$: here is a preliminary
+%\begin{equation}
+\newenvironment{Lem}
+{\par\noindent {Lemma.}}
+{\hfill }
+\begin{Lem}
+$If \  \alpha > 0 \  and \  x > 2 \log \alpha, \ then \ e^x > \alpha x$.
+\end{Lem}
+
+\newenvironment {Proof}
+{\par\noindent {Proof.}}
+{$\square$}
+
+\begin{Proof}
+By Calculus, $\alpha - 2 \log\alpha$ has its minimum at $\alpha = 2$ and is positive there. By more calculus, $e^x - \alpha x$ increases
+with $x$ for $x > \log \alpha$; but this function is positive at $x = 2 \log \alpha$ by the previous remark.
+\end{Proof}
+
+The proof of the next result is hard, and can be skipped without much loss.
+
+\newenvironment{Prop}
+{\par\noindent {Proposition.}}
+{\hfill }
+\begin{Prop}
+{\it For each $a > 0$,  let $W_a$  be  a  nonnegative  random  variable.  Suppose that for all $\lambda \geqq 0$,}
+	\begin{gather}
+		E\left\{ \text{exp}\left[ - e(\lambda) W_a\right] \right\} \leqq \text{exp}\left(-\lambda a\right) \\
+		E\left\{ \text{exp}\left[ - f(\lambda) W_a\right] \right\} \geqq \text{exp}\left(-\lambda (a+1) \right) \label{ref1}
+	\end{gather}
+{\it Let $\delta, \ a, \ b$ be positive, with}
+	\begin{gather}
+		\delta < \tfrac{1}{3} \\
+		\frac{b}{a} > \frac{9}{\delta^2} \\
+		\frac{a^2}{b} > \frac{16}{\delta^2}\log \frac{64}{\delta^2}.
+	\end{gather}
+{\it Then}
+	\begin{equation}
+		P\left\{ w_a < b \right\} > \tfrac{1}{2} \text{exp}\left[-\left( \tfrac{1}{2} + 2\delta\right)a^2/b\right].
+	\end{equation}
+\end{Prop}
+
+\newenvironment {ProofNoEnd}
+{\par\noindent {Proof.}}
+{\hfill}
+
+\begin{ProofNoEnd}
+Let
+%\begin{equation}
+	\begin{align}
+		& \phi(\lambda) = \frac{\lambda^2}{2} > \frac{\lambda^3}{6} \qquad \text{and} 
+		\qquad \lambda = (1+\delta)\frac{a}{b} \qquad \text{and} \\
+		&k = \frac{a^2}{b} \qquad \text{and} \qquad N = \frac{2}{\delta^2}.\notag
+	\end{align}
+%\end{equation}
+Now $0 < \phi < f$, so $E\left\{\text{exp}\left[-\phi(\lambda) W_a\right]\right\} > \text{exp}\left[-\lambda(a+1)\right]$, 
+by ($\ref{ref1}$). Integrating by parts,
+	\begin{equation}
+		\phi(\lambda){\textstyle \int_0^{\infty}} P\left\{W_a < x \right\} \text{exp}\left[-\phi(\lambda)x\right]\,dx
+		> \text{exp}\left[-\lambda(a+1)\right]. \label{ref2}
+	\end{equation}
+The interval of integration $[0, \infty)$ in ($\ref{ref2}$) splits into five subintervals:
+%\begin{equation}
+	\begin{align}
+		&I_1 = [0, Na] \qquad \text{and} \qquad I_2 = (Na, (1-2\delta)b] \qquad \text{and} \qquad I_3 = (b, 2b], \\
+		&I_4 = (2b, \infty) \qquad \text{and} \qquad I_5 = ((1-2\delta)b, b]).\notag
+	\end{align}
+%\end{equation}
+Let
+	\begin{equation}
+		\eta_i = \phi(\lambda){\textstyle \int_{I_i}}P\left\{W_a < x\right\} \text{exp}\left[ - \phi (\lambda)x\right] \,dx.
+	\end{equation}
+\end{ProofNoEnd}
+
+%\end{equation}
+\end{document}
